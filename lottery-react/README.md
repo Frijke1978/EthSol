@@ -1,3 +1,18 @@
+Prereq:
+
+Create new contract with Solidity
+
+npm init ( enter all defaults)
+
+npm install solc@0.4.17
+npm install --save solc@0
+
+npm install web3@1.3.5 ( stable version )
+npm install --save mocha ganache-cli
+
+npm install --save truffle-hdwallet-provider@0.0.3
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
