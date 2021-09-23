@@ -3,7 +3,7 @@ const Web3 = require("web3");
 const compiledFactory = require('./build/CampaignFactory.json');
 
 const provider = new HDWalletProvider(
-  "draw visual employ caution beauty fringe feature dog frog lunar smooth submit",
+  "draw visual employ caution beauty fringe feature dog frog lunar smooth submit", // make sure this is not for your prod wallet, you will get robbed! 
   // remember to change this to your own phrase!
   "https://rinkeby.infura.io/v3/fe0ee19eb42149138ad910c8a0b317ef"
   // remember to change this to your own endpoint!
