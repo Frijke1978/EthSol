@@ -29,7 +29,6 @@ describe('Blockchain', () => {
         describe('when the chain does not start with the genesis block', () => {
             it('returns false', () => {
                 blockchain.chain[0] = { data: 'fake-genesis' };
-
                 expect(Blockchain.isValidChain(blockchain.chain)).toBe(false);
             });
         });
@@ -52,16 +51,13 @@ describe('Blockchain', () => {
 
             describe('and the chain contains a block with an invalid field', () => {
                 it('returns false', () => {
-
                     blockchain.chain[2].data = 'some-bad-and-evil-data';
-
                     expect(Blockchain.isValidChain(blockchain.chain)).toBe(false);
                 });
             });
 
             describe('and the chain does not contain any invalid blocks', () => {
                 it('returns true', () => {
-
                     expect(Blockchain.isValidChain(blockchain.chain)).toBe(true);
                 });
             });
@@ -82,12 +78,10 @@ describe('Blockchain', () => {
         describe('when the new chain is not longer', () => {
             beforeEach(() => {
                 newChain.chain[0] = { new: 'chain' };
-
                 blockchain.replaceChain(newChain.chain);
             });
 
             it('does not replace the chain', () => {
-
                 expect(blockchain.chain).toEqual(originalChain);
             });
 
@@ -106,12 +100,10 @@ describe('Blockchain', () => {
             describe('and the chain is invalid', () => {
                 beforeEach(() => {
                     newChain.chain[2].hash = 'some-fake-hash';
-
                     blockchain.replaceChain(newChain.chain);
                 });
 
                 it('does not replace the chain', () => {
-
                     expect(blockchain.chain).toEqual(originalChain);
                 });
 
@@ -126,7 +118,6 @@ describe('Blockchain', () => {
                 });
 
                 it('replaces the chain', () => {
-
                     expect(blockchain.chain).toEqual(newChain.chain);
                 });
 
