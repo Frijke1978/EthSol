@@ -35,3 +35,15 @@
 - Started peers through alternate ports, and broadcasted chains when blocks were mined through the api.
 - Synchronized chains when new peers connected to the network.
 - Optimized the implementation to avoid redundant interaction.
+
+## Wallets, Keys, and Transactions | The Cryptocurrency Backend
+
+- Created the core wallet class for the cryptocurrency.
+- Developed the cryptographic key pair and public key addressing system.
+- Implementing signature generation and verification to make transactions official.
+- Built the main transaction class - with the output map and input structure.
+- Developed functionality to actually validate transactions.
+- Tied transaction creation with the wallet class.
+- Allowed transactions to be updated with multiple outputs to efficiently use existing objects.
+- Improved the hash function to recognize objects with new properties as changes in incoming data.
+- Covered edges cases with transaction updates to prevent vulnerabilities.
