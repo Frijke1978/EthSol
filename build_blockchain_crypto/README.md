@@ -47,3 +47,13 @@
 - Allowed transactions to be updated with multiple outputs to efficiently use existing objects.
 - Improved the hash function to recognize objects with new properties as changes in incoming data.
 - Covered edges cases with transaction updates to prevent vulnerabilities.
+
+##  Transaction Pool | the Blockchain Backend
+
+- Created the core transaction pool with an ability to set transactions.
+- Handled transaction through the API, and added API-generated transactions to the pool.
+- Made sure invalid transactions did not go to the pool.
+- Handled updates to transactions through the API.
+- Exposed a new API method to read the transaction pool data.
+- Broadcasted transactions as they occurred through the API.
+- Synced the transaction pool map as a network-dependent object like the blockchain.
