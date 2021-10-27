@@ -1,0 +1,17 @@
+  npm -v
+  npm init -y
+  npm install --save-dev jest@23.6.0
+  npm i hex-to-binary@1.0.1 --save
+  npm i express@4.16.3 --save
+  npm i nodemon@1.18.4 --save-dev
+  npm i body-parser@1.18.3 --save
+  npm i pubnub@4.21.6 —save
+  npm i pubnub@4.21.6 --save
+  npm i redis@2.8.0 --save
+  npm i cross-env@5.2.0 --save-dev
+  npm i request@2.88.0 --save
+  npm i elliptic@6.4.1 --save
+  npm i uuid@3.3.2 --save
+  npm run dev-peer
+  npm run test
+  npm run dev
