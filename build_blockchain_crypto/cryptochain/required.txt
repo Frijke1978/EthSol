@@ -18,3 +18,4 @@
 
   npm i react@16.6.0 react-dom@16.6.0 --save
   npm i parcel-bundler@1.10.2 --save
+  npm i babel-core babel-plugin-transform-class-properties babel-plugin-transform-object-rest-spread babel-preset-env babel-preset-react --save
