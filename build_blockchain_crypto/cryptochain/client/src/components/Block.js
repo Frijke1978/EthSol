@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button } from 'react-bootstrap';
+import Transaction from './Transaction';
 
 class Block extends Component {
     state = { displayTransaction: false };
@@ -10,6 +11,7 @@ class Block extends Component {
 
     get displayTransaction() {
         const { data } = this.props.block;
+
         const stringifiedData = JSON.stringify(data);
 
         const dataDisplay = stringifiedData.length > 35 ?
@@ -17,8 +19,16 @@ class Block extends Component {
             stringifiedData;
         
         if (this.state.displayTransaction) {
-            return(
-                <div>{JSON.stringify(data)}
+            return (
+                <div>
+                    {
+                        data.map(transaction => (
+                            <div key={transaction.id}>
+                                <hr />
+                                <Transaction transaction={transaction} />
+                            </div>
+                        ))
+                    }
                     <br />
                     <Button
                     bsStyle="danger"
