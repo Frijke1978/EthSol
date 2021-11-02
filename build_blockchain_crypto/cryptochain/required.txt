@@ -21,3 +21,5 @@
   npm i babel-core babel-plugin-transform-class-properties babel-plugin-transform-object-rest-spread babel-preset-env babel-preset-react --save
 
   npm i react-bootstrap@0.32.4 --save
+  npm i react-router-dom@4.3.1 --save
+  npm i history@4.7.2 --save
