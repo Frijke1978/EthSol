@@ -7,6 +7,7 @@ const PubSub = require('./app/pubsub');
 const TransactionPool = require('./wallet/transaction-pool');
 const Wallet = require('./wallet');
 const TransactionMiner = require('./app/transaction-miner');
+const { start } = require('repl');
 
 const app = express();
 const blockchain = new Blockchain();
@@ -26,6 +27,25 @@ app.use(express.static(path.join(__dirname, 'client/dist')));
 
 app.get('/api/blocks', (req, res) => {
     res.json(blockchain.chain);
+});
+
+app.get('/api/blocks/length', (req, res) => {
+  res.json(blockchain.chain.length);
+});
+
+app.get('/api/blocks/:id', (req, res) => {
+  const { id } = req.params;
+  const { length } = blockchain.chain;
+
+  const blocksReversed = blockchain.chain.slice().reverse();
+
+  let startIndex = (id-1) * 5;
+  let endIndex = id * 5;
+
+  startIndex = startIndex < length ? startIndex : length;
+  endIndex = endIndex < length ? endIndex : length;
+
+  res.json(blocksReversed.slice(startIndex, endIndex));
 });
 
 app.post('/api/mine', (req, res) => {
@@ -147,7 +167,7 @@ const walletBarAction = () => generateWalletTransaction({
   wallet: walletBar, recipient: wallet.publicKey, amount: 15
 });
 
-for (let i = 0; i < 10; i++) {
+for (let i = 0; i < 20; i++) {
   if (i % 3 === 0) {
     walletAction();
     walletFooAction();
