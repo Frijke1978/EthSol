@@ -95,3 +95,10 @@
 - Visualized the transaction pool - and added real-time polling capabilities.
 - Added a way to mine a block through the frontend.
 
+## Backend-Included Improvements
+
+- Added a known addresses feature with both the backend and frontend.
+- Supported a paginated exploration of the blocks with both the backend and frontend.
+
+
+
